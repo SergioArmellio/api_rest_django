@@ -6,6 +6,9 @@ from .models import Movie, Rating, User
 from .serializers import MovieSerializer, RatingSerializer
 from rest_framework.authentication import TokenAuthentication
 
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
 class MovieViewSet(viewsets.ModelViewSet):
     queryset = Movie.objects.all()
